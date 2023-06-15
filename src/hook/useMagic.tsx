@@ -16,7 +16,6 @@ const useMagic = () => {
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
