@@ -9,7 +9,8 @@ const useMagic = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://api.magicthegathering.io/v1/cards');
-        setCards(response.data.cards);
+        const filteredCards = response.data.cards.filter(card => card.imageUrl);
+        setCards(filteredCards);
         setLoading(false);
       } catch (error) {
         console.log(error);
