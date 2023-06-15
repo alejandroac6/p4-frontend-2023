@@ -1,6 +1,4 @@
-import React from "react";
-
-const mainpage = () => {
+const Mainpage = () => {
   return (
     <>
       <div>index</div>
@@ -8,4 +6,4 @@ const mainpage = () => {
   );
 };
 
-export default mainpage;
+export default Mainpage;
