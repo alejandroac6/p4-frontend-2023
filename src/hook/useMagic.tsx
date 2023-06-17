@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const useMagic = (id) => {
   const [cards, setCards] = useState([]);
@@ -8,9 +8,21 @@ const useMagic = (id) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api.magicthegathering.io/v1/cards/${id}`);
-        const filteredCards = response.data.cards.filter(card => card.imageUrl);
-        setCards(filteredCards);
+        const response = await axios.get(
+          `https://api.magicthegathering.io/v1/cards/${id}`
+        );
+        if (id) {
+          const filteredCards = response.data.card;
+          const array =[]
+          array.push(filteredCards)
+          setCards(array)
+        } else {
+          const filteredCards = response.data.cards.filter(
+            (card) => card.imageUrl
+          );
+          setCards(filteredCards);
+        }
+
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -23,4 +35,4 @@ const useMagic = (id) => {
   return { cards, loading };
 };
 
-export default useMagic
+export default useMagic;

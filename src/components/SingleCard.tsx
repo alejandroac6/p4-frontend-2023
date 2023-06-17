@@ -1,16 +1,15 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-
-const CardList = ({ card }) => {
+const SingleCard = ({ card }) => {
   const { imageUrl, name, manaCost, originalType, text, id } = card;
+  console.log({card})
 
   return (
     <>
       <div>
         <Link to={`/card/${id}`}>
-            <img src={imageUrl} alt="Imagen" />        
+          <img src={imageUrl} alt="Imagen" />
         </Link>
-        
 
         <div>
           <p>{name}</p>
@@ -19,8 +18,12 @@ const CardList = ({ card }) => {
           <p>{text}</p>
         </div>
       </div>
+
+      <div>
+        <Link to="/">Ir a la página de inicio</Link>
+      </div>
     </>
   );
 };
 
-export default CardList;
+export default SingleCard;
