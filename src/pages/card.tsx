@@ -19,7 +19,8 @@ const Card = () => {
           </div>
         ):(
           <>
-          <h2> Cargando </h2>
+          <p className="spinner-text">Cargando</p>
+          <div className="spinner"></div>
         </>
         )
       }

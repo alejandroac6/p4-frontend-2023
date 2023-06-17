@@ -13,7 +13,8 @@ const Mainpage = () => {
         </>
       ) : (
         <>
-          <h2> No hay cartas </h2>
+          <p className="spinner-text">Cargando</p>
+          <div className="spinner"></div>
         </>
       )}
     </>
