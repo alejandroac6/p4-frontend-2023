@@ -18,10 +18,6 @@ const SingleCard = ({ card }) => {
           <p>{text}</p>
         </div>
       </div>
-
-      <div>
-        <Link to="/">Ir a la página de inicio</Link>
-      </div>
     </>
   );
 };

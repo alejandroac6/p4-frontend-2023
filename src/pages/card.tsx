@@ -4,7 +4,7 @@ import SingleCard from '../components/SingleCard';
 
 const Card = () => {
   const params = useParams()
-  const { cards, loading } = useMagic(params.id);
+  const { cards, loading } = useMagic({id:params.id});
 
 
   return (

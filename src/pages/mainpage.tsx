@@ -1,7 +1,7 @@
 import useMagic from "../hook/useMagic";
 import CardList from "../components/CardList";
 const Mainpage = () => {
-  const { cards, loading } = useMagic("");
+  const { cards, loading } = useMagic({});
 
   return (
     <>
