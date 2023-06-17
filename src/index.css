@@ -1,3 +1,75 @@
+
+/* estilos para la navegacion */
+nav{
+    background-color: black;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+nav h1{
+    color: aliceblue;
+    margin-left: 2rem;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+
+.logo{
+    width: 8.8rem;
+    margin-top: 0rem;
+    margin-bottom: -0.2rem;
+    border: 0.2rem solid black;
+    transition: border-color 0.5s;
+}
+
+.logo:hover{
+    border-color: rgba(255, 255, 255, 0.781);
+    
+}
+
+
+/* distribucion de la pagina principal */
+.cards-distribution{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+}
+
+/* insertamos los media queries */
+@media screen and (max-width:2000px) {
+    .cards-distribution{
+        grid-template-columns: repeat(6,1fr);
+    }
+    
+}
+
+@media screen and (max-width:1400px) {
+    .cards-distribution{
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+}
+@media screen and (max-width:1000px) {
+    .cards-distribution{
+        grid-template-columns: repeat(3,1fr);
+    }
+    
+}
+@media screen and (max-width:800px) {
+    .cards-distribution{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+@media screen and (max-width:500px) {
+    .cards-distribution{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+}
+
+
+/* css para el spinner de carga */
 .spinner-text{
     text-align: center;
     font-weight: bold;
@@ -10,7 +82,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border-left-color: #7d47ff;
+    border-left-color: #740303;
     margin: 0 auto;
     margin-top: 20px;
     animation: spin 1s ease infinite;

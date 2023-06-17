@@ -10,14 +10,6 @@ const CardList = ({ card }) => {
         <Link to={`/card/${id}`}>
             <img src={imageUrl} alt="Imagen" />        
         </Link>
-        
-
-        <div>
-          <p>{name}</p>
-          <p>{manaCost}</p>
-          <p>{originalType}</p>
-          <p>{text}</p>
-        </div>
       </div>
     </>
   );
