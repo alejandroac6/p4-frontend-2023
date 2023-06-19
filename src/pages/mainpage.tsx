@@ -6,33 +6,25 @@ import Logo from "../components/Logo";
 const Mainpage = () => {
   const [colors, setColors] = useState([]);
   const [type, setType] = useState("");
-  const { cards, loading } = useMagic({color:colors.join(',')});
-
- 
-
+  const { cards, loading } = useMagic({ color: colors.join(",") });
 
   const handleClick = (color) => {
-
     if (colors.includes(color)) {
-      const newColors=colors.filter(c=>c!==color)
-      setColors(newColors)
-      
+      const newColors = colors.filter((c) => c !== color);
+      setColors(newColors);
     } else {
-      setColors([...colors,color])
+      setColors([...colors, color]);
     }
-
   };
 
-  useEffect(()=>{
-    const apiColors=colors.join(',')
-  }
-    ,[])
-
+  useEffect(() => {
+    const apiColors = colors.join(",");
+  }, []);
 
   return (
     <>
       <div className="logo-container">
-        <div onClick={() => handleClick("R")} >
+        <div onClick={() => handleClick("R")}>
           <Logo
             imageUrl={
               "https://img2.freepng.es/20180615/tgi/kisspng-magic-the-gathering-magic-points-playing-card-car-werewolf-symbol-5b242521549546.0886581015290954573465.jpg"
@@ -74,16 +66,16 @@ const Mainpage = () => {
       </div>
 
       <div className="cards-distribution">
-        {cards.length ? (
+        {loading ? (
+          <>
+            <p className="spinner-text">Loading</p>
+            <div className="spinner"></div>
+          </>
+        ) : (
           <>
             {cards.map((card) => (
               <CardList key={card.id} card={card} />
             ))}
-          </>
-        ) : (
-          <>
-            <p className="spinner-text">Loading</p>
-            <div className="spinner"></div>
           </>
         )}
       </div>

@@ -9,6 +9,7 @@ const useMagic = ({id="",type="",color=""}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true)
         const response = await axios.get(
           `https://api.magicthegathering.io/v1/cards/${id}`
         );
@@ -28,7 +29,6 @@ const useMagic = ({id="",type="",color=""}) => {
           );
 
           console.log(filteredCards)
-
           setCards(filteredCards);
         }
 
