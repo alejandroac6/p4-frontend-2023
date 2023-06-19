@@ -28,6 +28,28 @@ nav h1{
     
 }
 
+.mana{
+    width:2rem;
+    border: 0.2rem solid black;
+    border-radius: 50%;
+    margin-left:0.5rem;
+    transition: border-color 0.75s;  
+    
+}
+
+.mana:hover{
+    border-color: rgba(255, 255, 255, 0.781);
+    
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
 
 /* distribucion de la pagina principal */
 .cards-distribution{
