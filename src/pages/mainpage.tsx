@@ -65,20 +65,22 @@ const Mainpage = () => {
         </div>
       </div>
 
-      <div className="cards-distribution">
-        {loading ? (
-          <>
+      {loading ? (
+        <>
+          <div>
             <p className="spinner-text">Loading</p>
             <div className="spinner"></div>
-          </>
-        ) : (
-          <>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="cards-distribution">
             {cards.map((card) => (
               <CardList key={card.id} card={card} />
             ))}
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

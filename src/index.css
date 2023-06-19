@@ -50,7 +50,12 @@ nav h1{
     margin-bottom: 1rem;
 }
 
+/* estilo de la carta de la pagina principal */
 
+.cardList{
+    width: 12rem;
+
+}
 
 /* distribucion de la pagina principal */
 .cards-distribution{
@@ -94,7 +99,9 @@ nav h1{
 
 /* css para el spinner de carga */
 .spinner-text{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
     margin-top: 50px;
