@@ -18,12 +18,17 @@ const useMagic = ({id="",type="",color=""}) => {
           array.push(filteredCards)
           setCards(array)
         } else {
+          console.log(`https://api.magicthegathering.io/v1/cards?supertypes=${type}&colors=${color}`)
+
           const generalResponse=await axios.get(
             `https://api.magicthegathering.io/v1/cards?supertypes=${type}&colors=${color}`
           )
-          const filteredCards = response.data.cards.filter(
+          const filteredCards = generalResponse.data.cards.filter(
             (card) => card.imageUrl
           );
+
+          console.log(filteredCards)
+
           setCards(filteredCards);
         }
 
@@ -34,7 +39,7 @@ const useMagic = ({id="",type="",color=""}) => {
       }
     };
     fetchData();
-  }, []);
+  }, [color]);
 
   return { cards, loading };
 };
