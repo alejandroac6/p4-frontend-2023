@@ -57,6 +57,24 @@ nav h1{
 
 }
 
+/* estilo de la carta de la pagina especifica */
+
+.Single-card-container{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+}
+
+.Card-description{
+    margin-left: 1rem;
+
+
+}
+
+.Card-description p span{
+    font-weight: bold;
+}
+
 /* distribucion de la pagina principal */
 .cards-distribution{
     display: grid;

@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const MainLayout = () => {
+  // Layout principal de la App, contiene una barra de navagacion con el boton de inicio
   return (
     <>
     <nav>

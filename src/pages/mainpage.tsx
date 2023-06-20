@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Logo from "../components/Logo";
 
 const Mainpage = () => {
+  // pagina principal que contiene los logos y el container de cartas una vez cargadas, si esta cargando muestra un spinner
   const [colors, setColors] = useState([]);
   const [type, setType] = useState("");
   const { cards, loading } = useMagic({ color: colors.join(",") });
@@ -16,10 +17,6 @@ const Mainpage = () => {
       setColors([...colors, color]);
     }
   };
-
-  useEffect(() => {
-    const apiColors = colors.join(",");
-  }, []);
 
   return (
     <>

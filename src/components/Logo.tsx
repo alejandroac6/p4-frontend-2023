@@ -1,5 +1,6 @@
 import { useState } from "react";
 const Logo = ({ imageUrl }) => {
+    // componente que dada una imagen crea un logo que al dar click cambia el color del borde externo
   const [isSelected, setIsSelected] = useState(false);
 
   const imageStyle = {
@@ -12,12 +13,7 @@ const Logo = ({ imageUrl }) => {
 
   return (
     <div onClick={handleClick}>
-      <img
-        className="mana"
-        src={imageUrl}
-        alt="ManaLogo"
-        style={imageStyle}
-      />
+      <img className="mana" src={imageUrl} alt="ManaLogo" style={imageStyle} />
     </div>
   );
 };

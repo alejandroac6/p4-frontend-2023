@@ -1,34 +1,37 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const useMagic = ({id="",type="",color=""}) => {
+const useMagic = ({ id = "", type = "", color = "" }) => {
+  // hook destinado a consultar a la API, el llamado se actualiza cada vez que cambia el estado de color de los componentes del main layout
+  // retorna una lista de objetos (cartas) y  si esta cargando o no
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true)
-        const response = await axios.get(
-          `https://api.magicthegathering.io/v1/cards/${id}`
-        );
-        if (id) {
-          const filteredCards = response.data.card;
-          const array =[]
-          array.push(filteredCards)
-          setCards(array)
-        } else {
-          console.log(`https://api.magicthegathering.io/v1/cards?supertypes=${type}&colors=${color}`)
+        setLoading(true);
 
-          const generalResponse=await axios.get(
+        if (id) {
+          // si le pasamos un id la peticion axios cambia
+          const response = await axios.get(
+            `https://api.magicthegathering.io/v1/cards/${id}`
+          );
+          const filteredCards = response.data.card;
+          const array = [];
+          array.push(filteredCards);
+          setCards(array);
+        } else {
+          // si no le pasamos id la peticion axios es la siguiente
+          const generalResponse = await axios.get(
             `https://api.magicthegathering.io/v1/cards?supertypes=${type}&colors=${color}`
-          )
+          );
+
+          // filtro las cartas que no tienen imagen
           const filteredCards = generalResponse.data.cards.filter(
             (card) => card.imageUrl
           );
 
-          console.log(filteredCards)
           setCards(filteredCards);
         }
 
